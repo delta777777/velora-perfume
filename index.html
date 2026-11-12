@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELORA — парфюмерия</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <h2>VELORA</h2>
+            <p>LUXURY PERFUMES</p>
+        </div>
+
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#about">О нас</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Главный экран -->
+    <main>
+        <section class="hero">
+
+            <!-- Текст слева -->
+            <div class="hero-content">
+                <p>ПРЕМИАЛЬНАЯ ПАРФЮМЕРИЯ</p>
+
+                <h1>
+                    Ароматы, которые<br>
+                    говорят за тебя
+                </h1>
+
+                <p>
+                    Открой для себя коллекцию уникальных ароматов.<br>
+                    Подчеркни свою индивидуальность.
+                </p>
+
+                <a href="#catalog">Перейти к каталогу →</a>
+            </div>
+
+            <!-- Изображение справа -->
+            <div class="hero-image">
+                <img
+                    src="img/perfume.png"
+                    alt="Парфюм VELORA"
+                >
+            </div>
+
+        </section>
+        <section class="cart" id="cart">
+    <h2>Твоя корзина</h2>
+    <p>Товаров в корзине: <span id="cart-count">0</span></p>
+    <div id="cart-items">
+        <p>Корзина пока пуста</p>
+    </div>
+    <p class="cart-total">
+        Итого: €<span id="cart-total">0</span>
+    </p>
+    <button class="clear-cart" onclick="clearCart()">Очистить корзину</button>
+<div class="checkout">
+    <h3>Оформление заказа</h3>
+
+    <label for="customer-name">Твоё имя</label>
+    <input type="text" id="customer-name" placeholder="Введи имя">
+
+    <label for="customer-phone">Номер телефона</label>
+    <input type="tel" id="customer-phone" placeholder="+380...">
+
+    <label for="customer-address">Адрес доставки</label>
+    <input type="text" id="customer-address" placeholder="Город, улица, дом">
+
+    <button class="checkout-button" onclick="placeOrder()">
+        Оформить заказ
+    </button>
+
+    <p id="order-message"></p>
+</div>
+</section>
+
+<section class="about" id="about">
+    <h2>О бренде VELORA</h2>
+    <p>VELORA — это искусство выражать себя через аромат. Изысканные композиции для тех, кто ценит индивидуальность, элегантность и неповторимый стиль.</p>
+</section>
+
+<section class="catalog" id="catalog">
+    <p class="section-label">НАША КОЛЛЕКЦИЯ</p>
+    <h2>Выбери свой аромат</h2>
+    <p class="catalog-description">
+        Ароматы, которые оставляют впечатление.
+    </p>
+<div class="search-box">
+    <input
+        type="search"
+        id="perfume-search"
+        placeholder="Поиск ароматов..."
+        aria-label="Поиск ароматов"
+    >
+</div>
+    <div class="catalog-grid">
+        <article class="perfume-card">
+            <div class="perfume-placeholder">
+            <img src="img/noir.jpg" alt="VELORA NOIR">
+            </div>
+            <h3>VELORA NOIR</h3>
+            <p>Глубокий древесный аромат</p>
+            <span>€89</span>
+            <button class="product-button" onclick="toggleDetails('about-noir', this)">Подробнее</button>
+            <button class="cart-button" onclick="addToCart('VELORA NOIR', 89)">
+                В корзину
+            </button>
+        </article>
+
+        <article class="perfume-card">
+            <div class="perfume-placeholder">
+            <img src="img/amber.jpg" alt="VELORA AMBER">
+            </div>
+            <h3>VELORA AMBER</h3>
+            <p>Тёплый, пряный аромат</p>
+            <span>€95</span>
+            <button class="product-button" onclick="toggleDetails('about-amber', this)">Подробнее</button>
+            <button class="cart-button" onclick="addToCart('VELORA AMBER', 95)">
+             В корзину
+            </button>
+        </article>
+
+        <article class="perfume-card">
+            <div class="perfume-placeholder">
+            <img src="img/gold.jpg" alt="VELORA GOLD">
+            </div>
+            <h3>VELORA GOLD</h3>
+            <p>Элегантный цветочный аромат</p>
+            <span>€99</span>
+            <button class="product-button" onclick="toggleDetails('about-gold', this)">Подробнее</button>
+            <button class="cart-button" onclick="addToCart('VELORA GOLD', 99)">
+            В корзину
+            </button>
+        </article>
+    </div>
+</section>
+<section class="perfume-details" id="about-noir">
+    <p class="section-label">VELORA COLLECTION</p>
+    <h2>VELORA NOIR</h2>
+    <p>Глубокий древесный аромат для тех, кто ценит элегантность и уверенность.</p>
+    <p>Ноты аромата: кедр, сандал и тёплая амбра.</p>
+    <span>€89</span>
+</section>
+<section class="perfume-details" id="about-amber">
+    <p class="section-label">VELORA COLLECTION</p>
+    <h2>VELORA AMBER</h2>
+    <p>Тёплый, пряный аромат с чувственным характером для особенных моментов.</p>
+    <p>Ноты аромата: амбра, ваниль и пряный кардамон.</p>
+    <span>€95</span>
+</section>
+<section class="perfume-details" id="about-gold">
+    <p class="section-label">VELORA COLLECTION</p>
+    <h2>VELORA GOLD</h2>
+    <p>Элегантный цветочный аромат, который подчёркивает утончённость и индивидуальность.</p>
+    <p>Ноты аромата: жасмин, роза и нежный мускус.</p>
+    <span>€99</span>
+</section>
+
+<section class="delivery" id="delivery">
+    <p class="section-label">СЕРВИС VELORA</p>
+    <h2>Доставка и оплата</h2>
+    <p class="delivery-intro">
+        Мы позаботились о том, чтобы твой любимый аромат
+        добрался до тебя бережно и вовремя.
+    </p>
+
+    <div class="delivery-grid">
+        <div class="delivery-card">
+            <span>01</span>
+            <h3>Бережная упаковка</h3>
+            <p>Каждый аромат тщательно упаковывается перед отправкой.</p>
+        </div>
+
+        <div class="delivery-card">
+            <span>02</span>
+            <h3>Удобная доставка</h3>
+            <p>Условия и сроки доставки уточняются при оформлении заказа.</p>
+        </div>
+
+        <div class="delivery-card">
+            <span>03</span>
+            <h3>Способ оплаты</h3>
+            <p>Доступные способы оплаты можно уточнить перед покупкой.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contacts" id="contacts">
+    <p class="section-label">МЫ НА СВЯЗИ</p>
+    <h2>Контакты</h2>
+    <p class="contacts-intro">
+        Есть вопросы об ароматах или заказе?
+        Свяжись с нами — будем рады помочь.
+    </p>
+
+    <div class="contact-card">
+        <h3>VELORA</h3>
+        <p>LUXURY PERFUMES</p>
+        <p>По вопросам заказа и доставки</p>
+        <a href="mailto:hello@velora.example">
+            Написать нам
+        </a>
+    </div>
+</section>
+
+    </main>
+<script>
+function toggleDetails(id, button) {
+    const details = document.getElementById(id);
+    const isOpen = details.style.display === "block";
+
+    document.querySelectorAll(".perfume-details").forEach(section => {
+        section.style.display = "none";
+    });
+
+    document.querySelectorAll(".product-button").forEach(btn => {
+        btn.textContent = "Подробнее";
+    });
+
+    if (!isOpen) {
+        details.style.display = "block";
+        button.textContent = "Скрыть";
+        details.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+
+
+let cart = JSON.parse(localStorage.getItem("velora-cart")) || [];
+
+function addToCart(name, price) {
+    const item = cart.find(product => product.name === name);
+
+    if (item) {
+        item.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    renderCart();
+    document.getElementById("cart").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function changeQuantity(name, amount) {
+    const item = cart.find(product => product.name === name);
+
+    if (!item) return;
+
+    item.quantity += amount;
+
+    if (item.quantity <= 0) {
+        cart = cart.filter(product => product.name !== name);
+    }
+
+    renderCart();
+}
+
+function removeFromCart(name) {
+    cart = cart.filter(product => product.name !== name);
+    renderCart();
+}
+
+function renderCart() {
+    const itemsContainer = document.getElementById("cart-items");
+    const countElement = document.getElementById("cart-count");
+    const totalElement = document.getElementById("cart-total");
+
+    itemsContainer.innerHTML = "";
+
+    let count = 0;
+    let total = 0;
+
+    if (cart.length === 0) {
+        itemsContainer.innerHTML = "<p>Корзина пока пуста</p>";
+    }
+
+    cart.forEach(item => {
+        count += item.quantity;
+        total += item.price * item.quantity;
+
+        const row = document.createElement("div");
+        row.className = "cart-item";
+
+        const name = document.createElement("span");
+        name.textContent = `${item.name} — €${item.price}`;
+
+        const controls = document.createElement("div");
+        controls.className = "cart-controls";
+
+        const minus = document.createElement("button");
+        minus.textContent = "−";
+        minus.className = "quantity-button";
+        minus.setAttribute("aria-label", `Уменьшить количество ${item.name}`);
+        minus.onclick = () => changeQuantity(item.name, -1);
+
+        const quantity = document.createElement("span");
+        quantity.textContent = item.quantity;
+        quantity.className = "quantity-number";
+
+        const plus = document.createElement("button");
+        plus.textContent = "+";
+        plus.className = "quantity-button";
+        plus.setAttribute("aria-label", `Увеличить количество ${item.name}`);
+        plus.onclick = () => changeQuantity(item.name, 1);
+
+        const remove = document.createElement("button");
+        remove.textContent = "Удалить";
+        remove.className = "remove-button";
+        remove.onclick = () => removeFromCart(item.name);
+
+        controls.append(minus, quantity, plus, remove);
+        row.append(name, controls);
+        itemsContainer.appendChild(row);
+    });
+
+    countElement.textContent = count;
+    totalElement.textContent = total;
+    localStorage.setItem("velora-cart", JSON.stringify(cart));
+}
+
+function clearCart() {
+    cart = [];
+    renderCart();
+}
+renderCart();
+
+function placeOrder() {
+    const name = document.getElementById("customer-name").value.trim();
+    const phone = document.getElementById("customer-phone").value.trim();
+    const address = document.getElementById("customer-address").value.trim();
+    const message = document.getElementById("order-message");
+
+    if (cart.length === 0) {
+        message.textContent = "Сначала добавь товар в корзину.";
+        return;
+    }
+
+    if (!name || !phone || !address) {
+        message.textContent = "Заполни все поля, пожалуйста.";
+        return;
+    }
+
+    let orderText = `Спасибо, ${name}! Твой заказ:\n`;
+
+    cart.forEach(item => {
+        orderText += `${item.name} — ${item.quantity} шт. × €${item.price}\n`;
+    });
+
+    const total = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+
+    orderText += `Итого: €${total}\n`;
+    orderText += `Телефон: ${phone}\n`;
+    orderText += `Адрес: ${address}`;
+
+    message.textContent = orderText;
+}
+
+const searchInput = document.getElementById("perfume-search");
+
+searchInput.addEventListener("input", function () {
+    const query = searchInput.value.trim().toLowerCase();
+    const products = document.querySelectorAll(".perfume-card");
+
+    products.forEach(function (product) {
+        const productName = product.querySelector("h3").textContent.toLowerCase();
+
+        product.style.display = productName.includes(query) ? "" : "none";
+    });
+});
+
+searchInput.addEventListener("input", function () {
+    const query = searchInput.value.trim().toLowerCase();
+    const products = document.querySelectorAll(".product-card");
+
+    products.forEach(function (product) {
+        const productName = product.textContent.toLowerCase();
+        product.style.display = productName.includes(query) ? "" : "none";
+    });
+});
+</script>
+</body>
+</html>

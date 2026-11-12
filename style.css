@@ -1,0 +1,766 @@
+body {
+    background-color: #090a09;
+    color: #f2eee7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background-color: #0d0e0d;
+    border-bottom: 1px solid #292a27;
+}
+
+.logo h2 {
+    color: #d9b477;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #aaa69c;
+    margin: 5px 0 0;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #f2eee7;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #d9b477;
+}
+
+
+main section {
+    padding: 100px 7%;
+    min-height: 300px;
+    background: linear-gradient(90deg, #090a09 0%, #171511 100%);
+}
+
+main section h1 {
+    font-size: 52px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+main section p {
+    color: #c1beb4;
+    line-height: 1.8;
+}
+
+main section a {
+    display: inline-block;
+    background-color: #d9b477;
+    color: #17140e;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+main section a:hover {
+    background-color: #f0ce96;
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    min-height: 560px;
+    padding: 40px 7%;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* КАТАЛОГ АРОМАТОВ */
+
+.catalog {
+    padding: 80px 7%;
+    background-color: #090a09;
+    text-align: center;
+    border-top: 1px solid #292a27;
+}
+
+.section-label {
+    color: #d9b477;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.catalog h2 {
+    color: #f2eee7;
+    font-size: 38px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.catalog-description {
+    color: #aaa69c;
+    margin-bottom: 45px;
+    line-height: 1.8;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.perfume-card {
+    padding: 20px;
+    background-color: #111210;
+    border: 1px solid #292a27;
+    text-align: left;
+    transition: border-color 0.3s ease;
+}
+
+.perfume-card:hover {
+    border-color: #d9b477;
+}
+
+.perfume-placeholder {
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1c1a15, #090a09);
+    overflow: hidden;
+}
+
+.perfume-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.perfume-card:hover .perfume-placeholder img {
+    transform: scale(1.05);
+}
+
+.perfume-card h3 {
+    color: #d9b477;
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin-top: 25px;
+}
+
+.perfume-card p {
+    color: #aaa69c;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.perfume-card span {
+    display: block;
+    color: #f2eee7;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 6%;
+        gap: 30px;
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%;
+    }
+
+    main section h1 {
+        font-size: 36px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog h2 {
+        font-size: 30px;
+    }
+}
+
+.product-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 18px;
+    border: 1px solid #d9b477;
+    background-color: transparent;
+    color: #d9b477;
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 1;
+    visibility: visible;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.product-button:hover {
+    background-color: #d9b477;
+    color: #090a09;
+}
+
+.perfume-details {
+    padding: 80px 7%;
+    background: linear-gradient(135deg, #111210, #090a09);
+    border-top: 1px solid #292a27;
+}
+
+.perfume-details h2 {
+    color: #d9b477;
+    font-size: 38px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    margin: 20px 0;
+}
+
+.perfume-details p {
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+.perfume-details span {
+    display: inline-block;
+    color: #d9b477;
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+.perfume-details {
+    display: none;
+}
+
+button.product-button {
+    background-color: transparent;
+    color: #d9b477;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button.product-button:hover {
+    background-color: #d9b477;
+    color: #090a09;
+}
+
+
+.delivery,
+.contacts {
+    padding: 90px 7%;
+    background-color: #090a09;
+    border-top: 1px solid #292a27;
+}
+
+.delivery h2,
+.contacts h2 {
+    color: #f2eee7;
+    font-size: 38px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.delivery-intro,
+.contacts-intro {
+    max-width: 650px;
+    color: #aaa69c;
+    line-height: 1.9;
+}
+
+.delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.delivery-card,
+.contact-card {
+    padding: 25px;
+    background-color: #111210;
+    border: 1px solid #292a27;
+    transition: border-color 0.3s ease;
+}
+
+.delivery-card:hover,
+.contact-card:hover {
+    border-color: #d9b477;
+}
+
+.delivery-card span {
+    color: #d9b477;
+    letter-spacing: 2px;
+}
+
+.delivery-card h3,
+.contact-card h3 {
+    color: #f2eee7;
+    font-weight: normal;
+}
+
+.delivery-card p,
+.contact-card p {
+    color: #aaa69c;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.contact-card {
+    max-width: 500px;
+    margin-top: 35px;
+}
+
+.contact-card h3 {
+    color: #d9b477;
+    letter-spacing: 3px;
+}
+
+.contact-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: 1px solid #d9b477;
+    color: #d9b477;
+    background: transparent;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-card a:hover {
+    background-color: #d9b477;
+    color: #090a09;
+}
+
+@media (max-width: 768px) {
+    .delivery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery h2,
+    .contacts h2 {
+        font-size: 30px;
+    }
+}
+
+.cart-button {
+    display: inline-block;
+    margin: 12px 0 0 8px;
+    padding: 12px 18px;
+    border: 1px solid #d9b477;
+    background-color: #d9b477;
+    color: #090a09;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+    background-color: #f0ce96;
+}
+
+.cart {
+    padding: 35px 7%;
+    background-color: #111210;
+    border-bottom: 1px solid #292a27;
+}
+
+.cart h2 {
+    color: #d9b477;
+    font-weight: normal;
+}
+
+.cart p {
+    color: #c1beb4;
+    line-height: 1.8;
+}
+
+.cart-total {
+    font-size: 22px;
+    color: #d9b477 !important;
+}
+
+.clear-cart {
+    padding: 10px 16px;
+    background: transparent;
+    border: 1px solid #d9b477;
+    color: #d9b477;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #292a27;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-button,
+.remove-button {
+    padding: 7px 12px;
+    border: 1px solid #d9b477;
+    background: transparent;
+    color: #d9b477;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.quantity-button {
+    min-width: 34px;
+    font-size: 18px;
+}
+
+.remove-button:hover,
+.quantity-button:hover {
+    background: #d9b477;
+    color: #090a09;
+}
+
+.quantity-number {
+    min-width: 20px;
+    text-align: center;
+    color: #f2eee7;
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.checkout {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #b99a55;
+    border-radius: 12px;
+    background: #171717;
+}
+
+.checkout h3 {
+    color: #d4af65;
+    margin-bottom: 20px;
+}
+
+.checkout label {
+    display: block;
+    margin: 15px 0 8px;
+    color: #f5f5f5;
+}
+
+.checkout input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+}
+
+.checkout-button {
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: #c5a15b;
+    color: #111;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkout-button:hover {
+    background: #e0c078;
+}
+
+#order-message {
+    color: #d4af65;
+    margin-top: 15px;
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .product-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .cart {
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .cart-controls {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .checkout {
+        padding: 18px;
+        box-sizing: border-box;
+    }
+
+    .checkout input {
+        font-size: 16px;
+    }
+
+    .checkout-button {
+        width: 100%;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+button {
+    background: linear-gradient(135deg, #d8bd7a, #b08d45);
+    color: #17130b;
+    border: 1px solid #d8bd7a;
+    border-radius: 4px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #f0dda5, #c5a15b);
+    box-shadow: 0 4px 18px rgba(197, 161, 91, 0.2);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.product-card {
+    background: linear-gradient(
+        145deg,
+        #1c1c1c,
+        #111111
+    );
+    border: 1px solid rgba(197, 161, 91, 0.35);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: #c5a15b;
+    box-shadow: 0 12px 35px rgba(197, 161, 91, 0.12);
+}
+
+.product-card img {
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.03);
+}
+
+.product-card h3 {
+    color: #d8bd7a;
+    letter-spacing: 1.5px;
+}
+
+.product-card p {
+    line-height: 1.7;
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: 3px;
+    line-height: 1.2;
+    color: #d8bd7a;
+    font-weight: 500;
+}
+
+h2 {
+    color: #d8bd7a;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+h3 {
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+p {
+    line-height: 1.8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #101010;
+    border-bottom: 1px solid rgba(197, 161, 91, 0.35);
+    padding: 24px 40px;
+}
+
+nav a {
+    color: #e8e2d6;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background: #c5a15b;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #d8bd7a;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 75% 50%,
+            rgba(197, 161, 91, 0.12),
+            transparent 55%
+        ),
+        #101010;
+}
+
+.hero-content {
+    animation: heroFadeIn 1s ease both;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
